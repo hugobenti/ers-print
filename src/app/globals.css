@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  background-color: #f0f0f0;
+}
+
+.header {
+  position: relative;
+  z-index: 10;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+}
+
+.circle {
+  width: 80vw;
+  height: 80vw;
+  border-radius: 40vw;
+  background-color: #d2d8de;
+  position: relative;
+  z-index: 0;
+  transition: 1s ease-in-out;
+  top: 0vw;
+  left: 0vw;
+}
+
+.c1a {
+  transition: 1s ease-in-out;
+  top: 20vw;
+  left: 20vw;
+}
+
+.c2a {
+  transition: 1s ease-in-out;
+  top: -15vw;
+  left: 70vw;
+}
+
+.c3a {
+  transition: 1s ease-in-out;
+  top: -5vw;
+  left: -10vw;
+}
+.navTitle {
+  color: #102C4A;
+  text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+  border-bottom: 4px solid transparent;
+  transition: 300ms ease-in-out;
+  border-radius: 0px 0px 2px 2px;
+}
+
+.navTitle:hover {
+  color: #1D528A;
+  border-bottom: 4px solid #1D528A;
+}
+
+.navSelected {
+  border-bottom: 4px solid #102C4A;
+
+}
