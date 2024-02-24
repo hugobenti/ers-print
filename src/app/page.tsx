@@ -4,6 +4,9 @@ import image1 from "../../public/carrousel/carrousel_photo_1.jpg";
 import image2 from "../../public/carrousel/carrousel_photo_2.jpg";
 import image3 from "../../public/carrousel/carrousel_photo_3.jpg";
 import { useEffect, useRef, useState } from "react";
+import LightIcon from "./components/LightIcon";
+import RocketIcon from "./components/RocketIcon";
+import TrophyIcon from "./components/TrophyIcon";
 
 export default function Home() {
   const [animationComplete, setAnimationComplete] = useState<boolean>(true);
@@ -13,6 +16,33 @@ export default function Home() {
   const [divWidth, setDivWidth] = useState(0);
   const [divHeight, setDivHeight] = useState(0);
 
+
+  const ref = useRef<HTMLParagraphElement>(null);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        root: null, // Use null para o viewport
+        rootMargin: "0px", // Margem adicional em relação ao viewport
+        threshold: 0.5, // Quanto do elemento precisa estar visível para ser considerado visível (50%)
+      }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
+
   useEffect(() => {
     if (divRef.current) {
       setDivWidth(divRef.current.clientWidth);
@@ -21,7 +51,7 @@ export default function Home() {
   }, []);
   return (
     <div className="w-full">
-      <div className="w-full overflow-hidden bg-neutral-300 flex">
+      <div className="w-full overflow-hidden bg-neutral-300 flex h-[60vh]">
         <div className="w-2/5 p-16 flex items-center">
           <div
             className={
@@ -75,12 +105,17 @@ export default function Home() {
         <div className="grow crop-carroucel" ref={divRef}>
           <div className="absolute h-full w-3/5 z-40 opacity-60 blur">
             <svg width={divWidth} height={divHeight}>
-              <polygon fill="#292929" points={`0 0,${0.18 * divWidth} 0, ${0.03 * divWidth} ${divHeight}, 0 ${divHeight}`} />
+              <polygon
+                fill="#292929"
+                points={`0 0,${0.18 * divWidth} 0, ${
+                  0.03 * divWidth
+                } ${divHeight}, 0 ${divHeight}`}
+              />
             </svg>
           </div>
 
           <div className="w-full h-full relative overflow-hidden">
-            <div className="w-full h-[600px]">
+            <div className="w-full ">
               <Image
                 src={image1}
                 className={`absolute w-full h-full duration-1000 ${
@@ -158,7 +193,72 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {selectedPage}
+
+      <p className="text-center text-3xl my-6 text-neutral-900 font-bold">
+        A gráfica completa para todas as suas necessidades
+      </p>
+      <p className="text-center text-lg mt-4 text-neutral-700 font-normal sm:px-12 md:px-24 lg:px-48 px-96">
+        A ErsPrint é uma gráfica completa para todas as suas necessidades de
+        impressão. Oferecemos uma{" "}
+        <span className="text-neutral-900 font-bold">
+          ampla variedade de opções
+        </span>{" "}
+        de impressão, desde cartões de visita, etiquetas, cartazes, panfletos
+        até onde a sua criatividade chegar. Tudo isso com a{" "}
+        <span className="text-neutral-900 font-bold">qualidade</span> que você
+        espera e um{" "}
+        <span className="text-neutral-900 font-bold">
+          atendimento humanizado e personalizado.
+        </span>
+      </p>
+
+      <div className="mb-12 mt-8 flex justify-center gap-6 sm:px-12 md:px-24 lg:px-48 px-96">
+        <div className="grow p-6 flex flex-col items-center justify-center">
+          {/* <div className="flex justify-center items-center w-full">
+            <div className="w-48">
+              <LightIcon fill="#9b9b9b" />
+            </div>
+          </div> */}
+          <p className={`font-bold text-xl text-center ${isVisible?'opacity-100':'opacity-0 -translate-y-4'} duration-1000`}>
+            Soluções personalizadas
+          </p>
+          <p className={`font-regular text-neutral-700 mt-4 text-lg text-center ${isVisible?'opacity-100':'opacity-0 translate-x-5'} duration-1000 delay-500`}>
+            Entendemos que cada projeto é único, por isso oferecemos soluções
+            personalizadas para atender às suas necessidades específicas. Nossa
+            equipe está sempre pronta para ajudar e oferecer sugestões para
+            tornar o seu projeto ainda melhor.
+          </p>
+        </div>
+        <div className="grow p-6 flex flex-col items-center justify-center">
+          {/* <div className="flex justify-center items-center w-full">
+            <div className="w-48">
+              <RocketIcon fill="#9b9b9b" />
+            </div>
+          </div> */}
+          <p className={`font-bold text-xl text-center ${isVisible?'opacity-100':'opacity-0 -translate-y-4'} duration-1000`}>Agilidade na produção</p>
+          <p className={`font-regular text-neutral-700 mt-4 text-lg text-center ${isVisible?'opacity-100':'opacity-0'} duration-1000 delay-500`} ref={ref}>
+            Com equipamentos modernos e uma equipe altamente qualificada,
+            garantimos uma produção rápida e eficiente para que você receba suas
+            impressões no prazo prometido.
+          </p>
+        </div>
+        <div className="grow p-6 flex items-center flex-col justify-center">
+          {/* <div className="flex justify-center items-center w-full">
+            <div className="w-48">
+              <TrophyIcon fill="#9b9b9b" />
+            </div>
+          </div> */}
+          <p className={`font-bold text-xl text-center ${isVisible?'opacity-100':'opacity-0 -translate-y-4'} duration-1000`}>
+            Impressões de alta qualidade
+          </p>
+          <p className={`font-regular text-neutral-700 mt-4 text-lg text-center ${isVisible?'opacity-100':'opacity-0 -translate-x-5'} duration-1000 delay-500`}>
+            Oferecemos impressões de alta qualidade para que seus projetos
+            tenham um acabamento perfeito. Trabalhamos com materiais de primeira
+            qualidade e equipamentos modernos para garantir que suas ideias
+            sejam traduzidas em impressões incríveis.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
