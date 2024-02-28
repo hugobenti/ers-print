@@ -16,7 +16,6 @@ export default function Home() {
   const [divWidth, setDivWidth] = useState(0);
   const [divHeight, setDivHeight] = useState(0);
 
-
   const ref = useRef<HTMLParagraphElement>(null);
   const [isVisible, setIsVisible] = useState<boolean>(false);
   useEffect(() => {
@@ -41,7 +40,6 @@ export default function Home() {
       }
     };
   }, []);
-
 
   useEffect(() => {
     if (divRef.current) {
@@ -214,49 +212,88 @@ export default function Home() {
 
       <div className="mb-12 mt-8 flex justify-center gap-6 sm:px-12 md:px-24 lg:px-48 px-96">
         <div className="grow p-6 flex flex-col items-center justify-center">
-          {/* <div className="flex justify-center items-center w-full">
-            <div className="w-48">
-              <LightIcon fill="#9b9b9b" />
-            </div>
-          </div> */}
-          <p className={`font-bold text-xl text-center ${isVisible?'opacity-100':'opacity-0 -translate-y-4'} duration-1000`}>
+          <p
+            className={`font-bold text-xl text-center z-10 ${
+              isVisible ? "opacity-100" : "opacity-0 -translate-y-4"
+            } duration-1000`}
+          >
             Soluções personalizadas
           </p>
-          <p className={`font-regular text-neutral-700 mt-4 text-lg text-center ${isVisible?'opacity-100':'opacity-0 translate-x-5'} duration-1000 delay-500`}>
+          <p
+            className={`font-regular text-neutral-700 z-20 mt-4 text-lg text-center ${
+              isVisible ? "opacity-100" : "opacity-0 translate-x-5"
+            } duration-1000 delay-500`}
+          >
             Entendemos que cada projeto é único, por isso oferecemos soluções
             personalizadas para atender às suas necessidades específicas. Nossa
             equipe está sempre pronta para ajudar e oferecer sugestões para
             tornar o seu projeto ainda melhor.
-          </p>
+          </p>{" "}
+          <div className="flex justify-center items-center w-full">
+            <div
+              className={`${
+                isVisible ? "scale-150" : "scale-100"
+              } w-48 -mt-36 delay-1000 duration-1000 transition`}
+            >
+              <LightIcon fill="#dbdbdb" />
+            </div>
+          </div>
         </div>
         <div className="grow p-6 flex flex-col items-center justify-center">
-          {/* <div className="flex justify-center items-center w-full">
-            <div className="w-48">
-              <RocketIcon fill="#9b9b9b" />
-            </div>
-          </div> */}
-          <p className={`font-bold text-xl text-center ${isVisible?'opacity-100':'opacity-0 -translate-y-4'} duration-1000`}>Agilidade na produção</p>
-          <p className={`font-regular text-neutral-700 mt-4 text-lg text-center ${isVisible?'opacity-100':'opacity-0'} duration-1000 delay-500`} ref={ref}>
+          <p
+            className={`font-bold text-xl text-center z-10 ${
+              isVisible ? "opacity-100" : "opacity-0 -translate-y-4"
+            } duration-1000`}
+          >
+            Agilidade na produção
+          </p>
+          <p
+            className={`font-regular text-neutral-700 z-20 mt-4 text-lg text-center ${
+              isVisible ? "opacity-100" : "opacity-0"
+            } duration-1000 delay-500`}
+            ref={ref}
+          >
             Com equipamentos modernos e uma equipe altamente qualificada,
             garantimos uma produção rápida e eficiente para que você receba suas
             impressões no prazo prometido.
-          </p>
+          </p>{" "}
+          <div className="flex justify-center items-center w-full">
+            <div
+              className={`${
+                isVisible ? "scale-150" : "scale-100"
+              } w-48 -mt-36 delay-1000 duration-1000 transition`}
+            >
+              <RocketIcon fill="#dbdbdb" />
+            </div>
+          </div>
         </div>
         <div className="grow p-6 flex items-center flex-col justify-center">
-          {/* <div className="flex justify-center items-center w-full">
-            <div className="w-48">
-              <TrophyIcon fill="#9b9b9b" />
-            </div>
-          </div> */}
-          <p className={`font-bold text-xl text-center ${isVisible?'opacity-100':'opacity-0 -translate-y-4'} duration-1000`}>
+          <p
+            className={`font-bold text-xl text-center ${
+              isVisible ? "opacity-100" : "opacity-0 -translate-y-4"
+            } duration-1000 z-10`}
+          >
             Impressões de alta qualidade
           </p>
-          <p className={`font-regular text-neutral-700 mt-4 text-lg text-center ${isVisible?'opacity-100':'opacity-0 -translate-x-5'} duration-1000 delay-500`}>
+          <p
+            className={`font-regular text-neutral-700 z-20 mt-4 text-lg text-center ${
+              isVisible ? "opacity-100" : "opacity-0 -translate-x-5"
+            } duration-1000 delay-500`}
+          >
             Oferecemos impressões de alta qualidade para que seus projetos
             tenham um acabamento perfeito. Trabalhamos com materiais de primeira
             qualidade e equipamentos modernos para garantir que suas ideias
             sejam traduzidas em impressões incríveis.
-          </p>
+          </p>{" "}
+          <div className="flex justify-center items-center w-full">
+            <div
+              className={`${
+                isVisible ? "scale-150" : "scale-100"
+              } w-48 -mt-36 delay-1000 duration-1000 transition`}
+            >
+              <TrophyIcon fill="#dbdbdb" />
+            </div>
+          </div>
         </div>
       </div>
     </div>

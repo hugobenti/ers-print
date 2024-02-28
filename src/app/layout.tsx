@@ -14,6 +14,7 @@ import Image from "next/image";
 import PhoneIcon from "./components/PhoneIcon";
 import { useRef, useState, useEffect } from "react";
 import SearchIcon from "./components/SearchIcon";
+import DropdownArrowIcon from "./components/DropdownArrowIcon";
 
 export const metadata = {
   title: "Create Next App",
@@ -72,7 +73,7 @@ export default function RootLayout({
                 placeholder="Buscar"
               />
               <div className="w-4 pb-5 mr-4 h-4  ">
-                  <SearchIcon />
+                <SearchIcon />
               </div>
             </div>
             <div className="flex gap-8 z-10">
@@ -96,9 +97,8 @@ export default function RootLayout({
               </Link>
               <div>
                 <div className="flex items-center gap-2 group ">
-                  <Link
-                    href="/produtos"
-                    className={`text-white group-hover:text-ersPrimaryDark transition font-bold ${
+                  <p
+                    className={`cursor-pointer text-white group-hover:text-ersPrimaryDark transition font-bold ${
                       pathname === "/produtos" ? "navSelected" : ""
                     }`}
                     onClick={() => {
@@ -106,12 +106,14 @@ export default function RootLayout({
                     }}
                   >
                     Produtos
-                  </Link>
+                  </p>
                   <div
-                    className={`w-0 h-0 border-t-[6px] border-b-[6px] border-l-[12px] transition 0 border-b-transparent border-t-transparent border-white group-hover:border-l-ersPrimaryDark ${
-                      isDropdownOpen ? "rotate-90" : "group-hover:rotate-90"
-                    }`}
-                  />
+                    className={`${
+                      isDropdownOpen ? "-rotate-90" : "rotate-0"
+                    } transition w-4 h-4 fill-white group-hover:fill-ersPrimaryDark`}
+                  >
+                    <DropdownArrowIcon />
+                  </div>
                 </div>
                 <div className="absolute right-0">
                   <div
