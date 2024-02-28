@@ -3,6 +3,7 @@ import Image from "next/image";
 import image1 from "../../public/carrousel/carrousel_photo_1.jpg";
 import image2 from "../../public/carrousel/carrousel_photo_2.jpg";
 import image3 from "../../public/carrousel/carrousel_photo_3.jpg";
+import marcas from "../../public/marcas.png";
 import { useEffect, useRef, useState } from "react";
 import LightIcon from "./components/LightIcon";
 import RocketIcon from "./components/RocketIcon";
@@ -49,7 +50,7 @@ export default function Home() {
   }, []);
   return (
     <div className="w-full">
-      <div className="w-full overflow-hidden bg-neutral-300 flex h-[60vh]">
+      <div className="w-full overflow-hidden bg-[#e0e0e0] flex h-[60vh]">
         <div className="w-2/5 p-16 flex items-center">
           <div
             className={
@@ -192,23 +193,25 @@ export default function Home() {
         </div>
       </div>
 
-      <p className="text-center text-3xl my-6 text-neutral-900 font-bold">
-        A gráfica completa para todas as suas necessidades
-      </p>
-      <p className="text-center text-lg mt-4 text-neutral-700 font-normal sm:px-12 md:px-24 lg:px-48 px-96">
-        A ErsPrint é uma gráfica completa para todas as suas necessidades de
-        impressão. Oferecemos uma{" "}
-        <span className="text-neutral-900 font-bold">
-          ampla variedade de opções
-        </span>{" "}
-        de impressão, desde cartões de visita, etiquetas, cartazes, panfletos
-        até onde a sua criatividade chegar. Tudo isso com a{" "}
-        <span className="text-neutral-900 font-bold">qualidade</span> que você
-        espera e um{" "}
-        <span className="text-neutral-900 font-bold">
-          atendimento humanizado e personalizado.
-        </span>
-      </p>
+      <div className="sm:px-12 md:px-24 lg:px-48 px-96 mb-12">
+        <p className="text-left text-3xl my-6 text-neutral-900 font-bold">
+          A gráfica completa para todas as suas necessidades
+        </p>
+        <p className="text-left text-lg mt-4 text-neutral-700 font-normal ">
+          A ErsPrint é uma gráfica completa para todas as suas necessidades de
+          impressão. Oferecemos uma{" "}
+          <span className="text-neutral-900 font-bold">
+            ampla variedade de opções
+          </span>{" "}
+          de impressão, desde cartões de visita, etiquetas, cartazes, panfletos
+          até onde a sua criatividade chegar. Tudo isso com a{" "}
+          <span className="text-neutral-900 font-bold">qualidade</span> que você
+          espera e um{" "}
+          <span className="text-neutral-900 font-bold">
+            atendimento humanizado e personalizado.
+          </span>
+        </p>
+      </div>
 
       <div className="mb-12 mt-8 flex justify-center gap-6 sm:px-12 md:px-24 lg:px-48 px-96">
         <div className="grow p-6 flex flex-col items-center justify-center">
@@ -294,6 +297,45 @@ export default function Home() {
               <TrophyIcon fill="#dbdbdb" />
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="sm:px-12 md:px-24 lg:px-48 px-96 mt-16 mb-12">
+        <p className="text-left text-3xl my-6 text-neutral-900 font-bold">
+          Atendimento ao cliente excepcional
+        </p>
+        <p className="text-left text-lg mt-4 text-neutral-700 font-normal ">
+          Estamos à disposição para auxiliar em qualquer dúvida ou questão. Não
+          hesite em nos contatar a qualquer momento; ficaremos felizes em
+          ajudar!
+        </p>
+        
+        <div className="w-full border border-neutral-300 mt-8 mb-12" />
+        
+        <div className="flex justify-between gap-8 px-8">
+          <p className="text-center text-base w-1/2 text-ersPrimaryDark font-normal ">
+            "Serviço excepcional da ERS Print! Qualidade, prazo e atendimento
+            profissional superaram minhas expectativas. Altamente recomendado
+            para soluções de impressão confiáveis ​​e de alta qualidade."
+          </p>
+          <p className="text-center text-base w-1/2 text-ersPrimaryDark font-normal ">
+            "Estou encantado com a qualidade do serviço da ERS Print. Entregaram
+            exatamente o que eu precisava, dentro do prazo e com atendimento
+            excepcional. Recomendo sem hesitar!"
+          </p>
+        </div>
+        <div className="w-full border border-neutral-300 mt-12 mb-8" />
+        <div className="w-full h-[80px] flex items-center overflow-hidden">
+          <div className="min-w-full animated-translate">
+            <Image src={marcas} alt="marcas" />
+          </div>
+          <div className="min-w-full animated-translate2 ">
+            <Image src={marcas} alt="marcas" />
+          </div>
+        </div>
+        <div className="flex justify-between w-full relative -top-20 h-0">
+          <div className=" w-8 h-[80px] bg-gradient-to-r from-[var(--backgroundColor)] to-[#00000000]" />
+          <div className=" w-8 h-[80px] bg-gradient-to-l from-[var(--backgroundColor)] to-[#00000000]" />
         </div>
       </div>
     </div>

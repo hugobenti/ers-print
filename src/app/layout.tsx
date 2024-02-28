@@ -159,29 +159,33 @@ export default function RootLayout({
         </div>
 
         <div className="w-1 h-20" ref={ref} />
-        <div className="content">{children}</div>
+        <div className="content pb-12">{children}</div>
 
-        <div className="footer bg-ersPrimaryDark">
-          <div className="flex justify-between items-center w-full py-8 px-24">
+        <div className="bg-ersPrimaryDark">
+          <div className="flex items-center w-full py-8 px-24">
             <div className="flex flex-col items-center"></div>
-            <div className="">
-              <div className="flex gap-2 items-center">
-                <div className="w-6 h-6">
-                  <PhoneIcon />
+            <div className="grow flex justify-start">OI</div>
+            <div className="grow flex justify-center">OI</div>
+            <div className="grow flex justify-end">
+              <div>
+                <div className="flex gap-2 items-center">
+                  <div className="w-6 h-6">
+                    <PhoneIcon />
+                  </div>
+                  <p className="text-white ">(11) 91234-5676</p>
                 </div>
-                <p className="text-white ">(11) 1234-5676</p>
-              </div>
-              <div className="flex gap-2 items-center mt-2">
-                <div className="w-6 h-6">
-                  <PhoneIcon />
+                <div className="flex gap-2 items-center mt-2">
+                  <div className="w-6 h-6">
+                    <PhoneIcon />
+                  </div>
+                  <p className="text-white ">(11) 91234-5678</p>
                 </div>
-                <p className="text-white ">(11) 1234-5678</p>
-              </div>
-              <div className="flex gap-2 items-center mt-2">
-                <div className="w-6 h-6">
-                  <PhoneIcon />
+                <div className="flex gap-2 items-center mt-2">
+                  <div className="w-6 h-6">
+                    <PhoneIcon />
+                  </div>
+                  <p className="text-white ">(11) 91234-5678</p>
                 </div>
-                <p className="text-white ">(11) 1234-5678</p>
               </div>
             </div>
           </div>
@@ -193,12 +197,12 @@ export default function RootLayout({
             <div className="grow border border-ersPrimaryLight" />
           </div>
           <div className="flex w-full flex-col items-center p-8">
-            <div className="w-[64px]">
+            <div className="w-24">
               <Image src={logo_footer} alt="Logo" />
             </div>
-            <p className="w-full text-center text-ersPrimaryLight font-thin text-sm">
+            {/* <p className="w-full text-center text-ersPrimaryLight font-thin text-sm">
               Todos os direitos reservados
-            </p>
+            </p> */}
           </div>
         </div>
       </body>

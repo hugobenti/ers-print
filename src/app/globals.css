@@ -6,12 +6,40 @@
   --backgroundColor: #ebebeb;
 }
 
-body,.content {
+body,
+.content {
   background-color: var(--backgroundColor);
 }
 
 .crop-carroucel {
   clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+@keyframes translate {
+  from {
+    transform: translate(0px); /* Initial rotation */
+  }
+  to {
+    transform: translate(100%); /* Final rotation (360 degrees) */
+  }
+}
+
+/* Apply the animation to the element */
+.animated-translate {
+  animation: translate 20s linear infinite; /* Name of the animation, duration, timing function, and iteration count */
+}
+
+@keyframes translate2 {
+  from {
+    transform: translate(-200%); /* Initial rotation */
+  }
+  to {
+    transform: translate(-100%); /* Final rotation (360 degrees) */
+  }
+}
+
+.animated-translate2 {
+  animation: translate2 20s linear infinite; /* Name of the animation, duration, timing function, and iteration count */
 }
 
 /* 
