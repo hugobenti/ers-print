@@ -95,7 +95,7 @@ export default function RootLayout({
               >
                 ERS Print
               </Link>
-              <div>
+              <div className="">
                 <div className="flex items-center gap-2 group ">
                   <p
                     className={`cursor-pointer text-white group-hover:text-ersPrimaryDark transition font-bold ${
@@ -115,7 +115,7 @@ export default function RootLayout({
                     <DropdownArrowIcon />
                   </div>
                 </div>
-                <div className="absolute right-0">
+                <div className="absolute right-0 z-10">
                   <div
                     className={`${
                       isDropdownOpen ? "opacity-100" : "opacity-0"
@@ -146,6 +146,12 @@ export default function RootLayout({
                     </div>
                   </div>
                 </div>
+                {isDropdownOpen ? (
+                  <div
+                    className="w-[100vw] h-[100vh] bg-black opacity-50 absolute top-0 left-0 z-0 "
+                    onClick={() => setIsDropdownOpen(false)}
+                  />
+                ) : null}
               </div>
             </div>
           </div>
@@ -162,30 +168,63 @@ export default function RootLayout({
         <div className="content pb-12">{children}</div>
 
         <div className="bg-ersPrimaryDark">
-          <div className="flex items-center w-full py-8 px-24">
-            <div className="flex flex-col items-center"></div>
-            <div className="grow flex justify-start">OI</div>
-            <div className="grow flex justify-center">OI</div>
-            <div className="grow flex justify-end">
+          <div className="flex items-start w-full pt-8 pb-2 px-24">
+            <div className="grow flex justify-center items-start">
               <div>
-                <div className="flex gap-2 items-center">
-                  <div className="w-6 h-6">
-                    <PhoneIcon />
-                  </div>
-                  <p className="text-white ">(11) 91234-5676</p>
-                </div>
-                <div className="flex gap-2 items-center mt-2">
-                  <div className="w-6 h-6">
-                    <PhoneIcon />
-                  </div>
-                  <p className="text-white ">(11) 91234-5678</p>
-                </div>
-                <div className="flex gap-2 items-center mt-2">
-                  <div className="w-6 h-6">
-                    <PhoneIcon />
-                  </div>
-                  <p className="text-white ">(11) 91234-5678</p>
-                </div>
+                <p className="text-white font-bold mb-2 text-lg">Produtos</p>
+                <p className="text-ersPrimaryLight mb-1 font-extralight">
+                  Cartazes
+                </p>
+                <p className="text-ersPrimaryLight mb-1 font-extralight">
+                  Etiquietas
+                </p>
+                <p className="text-ersPrimaryLight mb-1 font-extralight">
+                  Ribbons
+                </p>
+                <p className="text-ersPrimaryLight mb-1 font-extralight">
+                  Insumos ecommerce
+                </p>
+              </div>
+            </div>
+
+            <div className="grow flex justify-center items-start">
+              <div>
+                <p className="text-white font-bold mb-2 text-lg">ERS Print</p>
+                <p className="text-ersPrimaryLight mb-1 font-extralight">
+                  Quem somos
+                </p>
+                <p className="text-ersPrimaryLight mb-1 font-extralight">
+                  História
+                </p>
+              </div>
+            </div>
+
+            <div className="grow flex justify-center items-start">
+              <div>
+                <p className="text-white font-bold mb-2 text-lg">Contato</p>
+                <p className="text-ersPrimaryLight mb-1 font-extralight">
+                  Av. Engenheiro Saraiva de Oliveira, 104
+                </p>
+                <p className="text-ersPrimaryLight mb-1 font-extralight">
+                  Jardim Taboão, São Paulo - SP
+                </p>
+                <p className="text-ersPrimaryLight mb-1 font-extralight">
+                  vendas@ersprint.com.br
+                </p>
+              </div>
+            </div>
+
+            <div className="grow flex justify-center items-start">
+              <div>
+                <p className="text-ersPrimaryLight mb-1 font-extralight  mt-9">
+                  (11) 99345-1234
+                </p>
+                <p className="text-ersPrimaryLight mb-1 font-extralight">
+                  (11) 99564-9874
+                </p>
+                <p className="text-ersPrimaryLight mb-1 font-extralight">
+                  (11) 98546-4455
+                </p>
               </div>
             </div>
           </div>
